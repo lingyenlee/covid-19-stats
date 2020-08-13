@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
-//import Map from './Components/Map'
+import MapView from './Components/MapView'
 
 const App = () => {
 
-  
   return (
     <div className="App">
-      <div id="mapid">
-    
-      </div>
+      <MapView />
     </div>
   );
 }
