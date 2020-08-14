@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import './mapStyle.css'
+// import './mapStyle.css'
 import { Map, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import { useQuery } from '@apollo/react-hooks';
-import { GET_COVID_DATA } from './GetData'
+import { GET_COUNTRIES_DATA } from './GetData'
+import { numberWithCommas } from '../utils/helpers'
 
 
 const MapView = () => {
 
     const [activeCountry, setActiveCountry] = useState(null)
-    const { data, loading, error } = useQuery(GET_COVID_DATA);
+    const { data, loading, error } = useQuery(GET_COUNTRIES_DATA);
     const zoom = 2
 
     if (loading) return <p>Loading...</p>;
@@ -25,9 +26,8 @@ const MapView = () => {
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             />
 
-            {data.countries.map(item => (
+            {data.countries && data.countries.map(item => (
                 <CircleMarker
-
                     weight={0}
                     radius={Math.log(item.cases / 10)}
                     key={item.country}
@@ -50,9 +50,9 @@ const MapView = () => {
                 >
                     <div>
                         <h2> {activeCountry.country}</h2>
-                        <p>Active cases: {activeCountry.cases}</p>
-                        <p>Deaths: {activeCountry.deaths}</p>
-                        <p>Recovered: {activeCountry.recovered}</p>
+                        <p>Active cases: {numberWithCommas(activeCountry.cases)}</p>
+                        <p>Deaths: {numberWithCommas(activeCountry.deaths)}</p>
+                        <p>Recovered: {numberWithCommas(activeCountry.recovered)}</p>
                     </div>
                 </Popup>
             )}
