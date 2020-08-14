@@ -48,7 +48,7 @@ const MapView = () => {
                         setActiveCountry(null)
                     }}
                 >
-                    <div>
+                    <div className="popup-text">
                         <h2> {activeCountry.country}</h2>
                         <p>Active cases: {numberWithCommas(activeCountry.cases)}</p>
                         <p>Deaths: {numberWithCommas(activeCountry.deaths)}</p>

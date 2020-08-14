@@ -7,6 +7,10 @@
   height: 70vh;
 }
 
+.popup-text p {
+  margin: 0;
+}
+
 .grid-3 {
   margin-top: 2rem;
   display: grid;
@@ -29,20 +33,12 @@
 .card h5 {
   margin: 0;
 }
-
-.fa-clinic-medical {
-  color: tomato;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+.coffin,
+.mask-face,
+.smiley {
+  font-size: 4rem;
 }
 
-.fa-skull-crossbones {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.fa-heartbeat {
-  color: green;
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+.fa-plus-circle {
+  color: blue;
 }
