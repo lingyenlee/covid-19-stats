@@ -1,6 +1,6 @@
 // import React from 'react'
 import { useQuery } from '@apollo/react-hooks';
-import { GET_COUNTRIES_LOCAITON } from './GetData'
+import { GET_COUNTRIES_LOCAITON } from '../GetData'
 
 const CountryData = () => {
 

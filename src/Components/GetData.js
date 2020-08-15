@@ -17,36 +17,13 @@ export const GET_SUMMARY_DATA = gql`{
   }
 }`
 
-export const GET_COUNTRIES_LOCAITON = gql`{
- Country {
-    alpha2Code
-    location {
-      latitude
-      longitude
+export const GET_COUNTRIES_CONFIRMED = gql`{
+  summary {
+    countries {
+     Country_Region
+     Confirmed
+     NewConfirmed
     }
   }
 }`
-
-export const COUNTRIES_DATA = gql`
-  query country ($country: ID!){
-    country(country: $country) {
-      Summary {
-        Country_Region
-        NewConfirmed
-      }
-    }
-  }
-`
-
-// export const COUNTRIES_CARD_DATA = gql`{
-//     countries {
-//       country
-//       cases
-//       deaths
-//       recovered
-//       todayCases
-//       todayDeaths
-//       active
-//     }
-//  }`
 
