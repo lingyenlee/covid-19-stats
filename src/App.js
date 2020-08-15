@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import MapView from './Components/MapView'
 import CardInfo from './Components/CardInfo';
+import Header from './Components/Header';
 
 const App = () => {
 
   return (
     <div className="App">
-      <MapView />
+      <Header />
       <CardInfo />
     </div>
   );
