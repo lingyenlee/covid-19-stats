@@ -7,8 +7,7 @@ import CountryCharts from './CountryCharts';
 const Dashboard = () => {
     return (
         <>
-            <Header />
-            
+            <Header />  
             <CountryCharts />
         </>
     )

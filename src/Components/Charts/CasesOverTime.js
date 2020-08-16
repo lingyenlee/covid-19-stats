@@ -36,7 +36,7 @@ const CasesOverTime = (props) => {
 
 
     const series = [{
-        name: props.text,
+        name: props ? props.text : '',
         data: props.cases
     }]
 
