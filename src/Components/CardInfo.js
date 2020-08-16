@@ -13,8 +13,6 @@ const CardInfo = () => {
     // if (loading) return <p>Loading...</p>
     if (error) return <p>Looks like we've got a problem...</p>
     if (loading && !data) return null
-
-    console.log(data)
     return (
         <>
             <div className="card-wrapper grid-3">
@@ -29,7 +27,7 @@ const CardInfo = () => {
                     <h2>Deaths: {numberWithCommas(data.summary.globalData.Deaths)}</h2>
                 </div>
                 <div className="card">
-                    <span><i className="fas fa-plus-circle"></i> {numberWithCommas(-data.summary.globalData.NewRecovered)} today</span>
+                    <span><i className="fas fa-plus-circle"></i> {numberWithCommas(data.summary.globalData.NewRecovered)} today</span>
                     <span role="img" aria-label="smiley" className="smiley">🙂</span>
                     <h2>Recovered: {numberWithCommas(data.summary.globalData.Recovered)} </h2>
                 </div>

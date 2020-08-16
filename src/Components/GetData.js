@@ -17,13 +17,23 @@ export const GET_SUMMARY_DATA = gql`{
   }
 }`
 
-export const GET_COUNTRIES_CONFIRMED = gql`{
+export const GET_COUNTRIES_DATA = gql`
+  query ($country: ID!) {
+    timelineCountry(country: $country) {
+      Country
+      Date
+      Confirmed
+      Deaths
+      Recovered
+    }
+  } 
+`
+
+export const GET_COUNTRIES = gql`{
   summary {
     countries {
-     Country_Region
-     Confirmed
-     NewConfirmed
+      Country_Region
+      Code
     }
   }
 }`
-

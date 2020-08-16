@@ -7,14 +7,14 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient from "apollo-client";
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
-import {LoadingProvider} from './context/LoadingContext'
+import { LoadingProvider } from './context/LoadingContext'
 // import { ApolloLink } from 'apollo-boost'
 
 //create a new instance of cache
 const cache = new InMemoryCache()
 //create an instane of httplink
 const link = new HttpLink({
-  uri: 'https://api-corona.azurewebsites.net/graphql',
+  uri: "https://api-corona.azurewebsites.net/graphql",
   credentials: 'same-origin'
 })
 
