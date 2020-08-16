@@ -28,18 +28,26 @@ const CountrySelect = (props) => {
     return (
         <>
             <FormControl className={classes.formControl}>
-                <InputLabel id="demo-simple-select-label">Select Country</InputLabel>
+                <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+                    Country
+                </InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     value={props.value}
                     onChange={(e) => props.onSelect(e.target.value)}
+                    displayEmpty
+                    className={classes.selectEmpty}
                 >
+                    <MenuItem value="">
+                        <em>ALL</em>
+                    </MenuItem>
                     {data && data.summary.countries.map(country =>
                         <MenuItem
                             key={country.Country_Region}
                             value={country.Country_Region}
                         >{country.Country_Region}
                         </MenuItem>
+
                     )}
 
                 </Select>

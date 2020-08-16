@@ -3,17 +3,29 @@
 import { gql } from 'apollo-boost'
 
 export const GET_SUMMARY_DATA = gql`{
- summary {
-    globalData {
-      Confirmed
-      Deaths
-      Recovered
+    summary {
+      globalData {
+        Active
+        Confirmed
+        Deaths
+        Recovered
+        NewConfirmed
+        NewDeaths
+        NewRecovered
+        Last_Update
+      }
+    countries {
+      Country_Region
+      Code
       Active
+      Confirmed
+      Recovered
+      Deaths
       NewConfirmed
-      NewDeaths
       NewRecovered
+      NewDeaths
       Last_Update
-    }
+    } 
   }
 }`
 

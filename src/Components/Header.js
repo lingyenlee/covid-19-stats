@@ -16,7 +16,8 @@ const Header = () => {
 
     return (
         <div>
-            <h5>Global cases to date: {data.summary && numberWithCommas(data.summary.globalData.Confirmed)} </h5>
+            <h5>Global cases to date:  </h5>
+            <h1>{data.summary && numberWithCommas(data.summary.globalData.Confirmed)}</h1>
         </div>
     )
 
